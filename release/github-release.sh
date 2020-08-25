@@ -24,7 +24,7 @@ RELEASE_CHANGE_LOG=$4
 
 releaseInfo=`cat ./release/release.json`
 releaseUrl=$(echo ${releaseInfo}  | python -c 'import sys, json; print json.load(sys.stdin)["release_url"]')
-releaseData='{"body": "'"$RELEASE_CHANGE_LOG"'", "tag_name": "'"$RELEASE_VERSION"'", "draft": false, "prerelease": false, "name": "'"${RELEASE_FILE_NAME} ${RELEASE_VERSION}"'", "target_commitish": "master"}'
+releaseData='{"body": "'"$RELEASE_CHANGE_LOG"'", "tag_name": "'"${RELEASE_FILE_NAME}-${RELEASE_VERSION}"'", "draft": false, "prerelease": false, "name": "'"${RELEASE_FILE_NAME} ${RELEASE_VERSION}"'", "target_commitish": "master"}'
 
 echo $releaseData
 
